@@ -13,10 +13,10 @@
     dest: /tmp/hyperv
 
 - name: Decompress Hyper-V Tools
-  shell: tar xzf /tmp/hyperv/lis-rpms-4.1.2-2.tar.gz -C /tmp/hyperv-archive
+  shell: tar -xvzf /tmp/hyperv/lis-rpms-4.1.2-2.tar.gz -C /tmp/hyperv-archive
 
 - name: Run the Hyper-V tools installer
-  shell: /tmp/hyperv-archive/install.sh
+  shell: /tmp/hyperv-archive/LISISO/install.sh
 
 - name: Remove temporary directories for Hyper-V tools.
   file:
