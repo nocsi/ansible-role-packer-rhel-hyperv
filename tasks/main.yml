@@ -4,8 +4,6 @@
   changed_when: false
   register: kernel_release
 
-- include: nocsigroup.yml
-
 - name: Ensure necessary packages are installed.
   yum: "name={{ item }} state=present"
   with_items:
