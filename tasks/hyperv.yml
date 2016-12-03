@@ -1,7 +1,7 @@
 ---
 - name: Create temporary directories for Hyper-V tools.
   file:
-    path: "/tmp{{ item }}"
+    path: "/tmp/{{ item }}"
     state: directory
   with_items:
     - hyperv
