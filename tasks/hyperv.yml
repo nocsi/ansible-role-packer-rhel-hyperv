@@ -1,0 +1,27 @@
+---
+- name: Create temporary directories for Hyper-V tools.
+  file:
+    path: "/tmp{{ item }}"
+    state: directory
+  with_items:
+    - hyperv
+    - hyperv-archive
+
+- name: Retrieve Hyper-V tools.
+  get_url:
+    url: https://iso.nocsi.org/Include/lis-rpms-4.1.2-2.tar.gz
+    dest: /tmp/hyperv
+
+- name: Decompress Hyper-V Tools
+  shell: tar xzf /tmp/hyperv/lis-rpms-4.1.2-2.tar.gz -C /tmp/hyperv-archive
+
+- name: Run the Hyper-V tools installer
+  shell: /tmp/hyperv-archive/install.sh
+
+- name: Remove temporary directories for Hyper-V tools.
+  file:
+    path: "/tmp/{{ item }}"
+    state: absent
+  with_items:
+    - hyperv
+    - hyperv-archive

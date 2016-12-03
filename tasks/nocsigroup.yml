@@ -1,0 +1,10 @@
+---
+- name: Add NOC Labs base repository
+  template:
+    src: nocsi-group-Base.repo.j2
+    dest: /etc/yum.repos.d/CentOS-Base.repo
+
+- name: Add NOC Labs epel repository
+  template:
+      src: nocsi-group-epel.repo.j2
+      dest: /etc/yum.repos.d/epel.repo

@@ -1,0 +1,18 @@
+---
+galaxy_info:
+  author: nocsi
+  description:  RedHat/CentOS configuration for Packer Hyper-V
+  company: nocsi group
+  license: license (GPLv2, CC-BY, etc)
+  min_ansible_version: 1.8
+  - name: EL
+    versions:
+    - 6
+    - 7
+  categories:
+  - cloud
+  - development
+  - packaging
+  - system
+dependencies: []
+  
