@@ -17,6 +17,7 @@
 
 - name: Run the Hyper-V tools installer
   shell: /tmp/hyperv-archive/LISISO/install.sh
+  chdir: /tmp/hyperv-archive/LISISO/
 
 - name: Remove temporary directories for Hyper-V tools.
   file:
